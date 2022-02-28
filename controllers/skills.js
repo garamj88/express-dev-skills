@@ -12,9 +12,9 @@ function index(req, res) {
 
 function show(req, res) {
   console.log(req.params.id)
-  skillsDb.findById(req.params.id, function (error, skills) {
+  skillsDb.findById(req.params.id, function (error, skill) {
     res.render('skills/show', {
-      skills: skills,
+      skill: skill,
       error: error
     })
   })

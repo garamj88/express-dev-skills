@@ -22,7 +22,7 @@ const find = (conditions, callback) => {
   }
 }
 
-const findById = (id, callback) =>{
+const findById = (id, callback) => {
   try {
     const skill = skills.find(skill => skill._id === parseInt(id))
     if (!skill) throw new Error ('No skill was found')
