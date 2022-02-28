@@ -1,9 +1,9 @@
 const skills = [
-  {skill: 'MySQL', type: 'Database', level: 'intermediate', _id: 123456},
-  {skill: 'HTML', type: 'Front end', level: 'beginner', _id: 123463},
-  {skill: 'GIT', type: 'Version control', level: 'intermediate', _id: 123470},
-  {skill: 'Node.js', type: 'Backend', level: 'beginner', _id: 123477},
-  {skill: 'problem-solving', type: 'Soft skill', level: 'advanced', _id: 123484}
+  {skill: 'MySQL', type: 'database', level: 'intermediate', _id: 123456},
+  {skill: 'HTML', type: 'front end', level: 'beginner', _id: 123463},
+  {skill: 'GIT', type: 'version control', level: 'intermediate', _id: 123470},
+  {skill: 'Node.js', type: 'backend', level: 'beginner', _id: 123477},
+  {skill: 'Problem-solving', type: 'soft skill', level: 'advanced', _id: 123484}
 ]
 
 const find = (conditions, callback) => {
@@ -36,14 +36,27 @@ const findById = (id, callback) => {
 function create(skill, callback) {
   // add id
   skill._id = Date.now() % 1000000
-  skills.push(skill)
   skill.level
   skill.type
+  skills.push(skill)
   return callback(null, skill)
+}
+
+function findByIdAndDelete(id, callback) {
+  try { 
+    // Find the index based on the _id of the skill object
+    const idx = skills.findIndex(skill => skill._id == parseInt(id))
+    const deletedSkill = skills.splice(idx, 1)
+    if (!deletedSkill.length) throw new Error ('No skill was deleted')
+    return callback(null, deletedSkill[0])
+  } catch(error) {
+    return callback(error, null)
+  }
 }
 
 export { 
 	find,
   findById,
-  create
+  create,
+  findByIdAndDelete,
 }
