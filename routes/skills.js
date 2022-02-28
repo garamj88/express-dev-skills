@@ -7,6 +7,9 @@ router.get('/', skillsCtrl.index)
 router.get('/new', skillsCtrl.new)
 router.get('/:id', skillsCtrl.show)
 
+/* POST new skill */
+router.post('/', skillsCtrl.create)
+
 
 export { 
   router
