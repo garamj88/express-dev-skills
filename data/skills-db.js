@@ -1,9 +1,9 @@
 const skills = [
-  {skill: 'MySQL', type: 'database', level: 'intermediate', _id: 123456},
-  {skill: 'HTML', type: 'front end', level: 'beginner', _id: 123463},
-  {skill: 'GIT', type: 'version control', level: 'intermediate', _id: 123470},
-  {skill: 'Node.js', type: 'backend', level: 'beginner', _id: 123477},
-  {skill: 'problem-solving', type: 'soft skill', level: 'advanced', _id: 123484}
+  {skill: 'MySQL', type: 'Database', level: 'intermediate', _id: 123456},
+  {skill: 'HTML', type: 'Front end', level: 'beginner', _id: 123463},
+  {skill: 'GIT', type: 'Version control', level: 'intermediate', _id: 123470},
+  {skill: 'Node.js', type: 'Backend', level: 'beginner', _id: 123477},
+  {skill: 'problem-solving', type: 'Soft skill', level: 'advanced', _id: 123484}
 ]
 
 const find = (conditions, callback) => {

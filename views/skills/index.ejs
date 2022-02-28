@@ -18,14 +18,17 @@
       <ul>
         <% skills.forEach(function(skill) { %>
           <li>
-            <a href="/skills/<%= skill._id %>"><%= skill.skill %></a>
+            <a href="/skills/<%= skill._id %>">
+              <%= skill.skill %>
+            </a>
+            -
+            <%= skill.type %>
               -
-              <%= skill.type %>
-                -
-                <%= skill.level %>
+              <%= skill.level %>
           </li>
           <% }) %>
       </ul>
+      <a href="/skills/new">Add New Skill</a>
 </body>
 
 </html>
